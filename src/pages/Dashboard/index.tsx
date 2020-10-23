@@ -24,9 +24,9 @@ interface Transaction {
 }
 
 interface Balance {
-  income: string;
-  outcome: string;
-  total: string;
+  income: number;
+  outcome: number;
+  total: number;
 }
 
 const Dashboard: React.FC = () => {
@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => {
               <img src={income} alt="Income" />
             </header>
             <h1 data-testid="balance-income">
-              {balance.total ? formatValue(parseInt(balance.income, 10)) : '-'}
+              {balance.total ? formatValue(balance.income) : '-'}
             </h1>
           </Card>
           <Card>
@@ -69,7 +69,7 @@ const Dashboard: React.FC = () => {
             </header>
             <h1 data-testid="balance-outcome">
               {balance.outcome
-                ? formatValue(parseInt(balance.outcome, 10))
+                ? formatValue(balance.outcome)
                 : '-'}
             </h1>
           </Card>
@@ -79,7 +79,7 @@ const Dashboard: React.FC = () => {
               <img src={total} alt="Total" />
             </header>
             <h1 data-testid="balance-total">
-              {balance.total ? formatValue(parseInt(balance.total, 10)) : '-'}
+              {balance.total ? formatValue(balance.total) : '-'}
             </h1>
           </Card>
         </CardContainer>
