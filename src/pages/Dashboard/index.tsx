@@ -111,8 +111,8 @@ const Dashboard: React.FC = () => {
                         </td>
                       )}
                       <td>{transaction.category.title}</td>
-                      {/* <td>{transaction.created_at}</td> */}
-                      <td>{formatDate(new Date(transaction.created_at))}</td>
+                      <td>{transaction.created_at}</td>
+                      {/* <td>{formatDate(new Date(transaction.created_at))}</td> */}
                     </tr>
                   );
                 })}
